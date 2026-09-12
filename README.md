@@ -1,19 +1,27 @@
 # Vegas AU 2026 Trip
 
-Team itinerary for Autodesk University 2026 in Las Vegas, Sept 14-16, 2026: flights, the
-Fontainebleau hotel, Stadium Swim at Circa, the AU conference day at the Venetian Convention &
-Expo Center, a pinned schematic map with Google Maps links, confirmations, and open items.
+Password-protected team itinerary for Autodesk University 2026 in Las Vegas, Sept 14-16, 2026:
+flights, the Fontainebleau hotel, Stadium Swim at Circa, the AU conference day at the Venetian
+Convention & Expo Center, a pinned schematic map with Google Maps links, confirmations, tickets,
+driver contact and open items.
 
 Live site: https://tandem-engineering-group.github.io/Vegas_Autodesk/
 
-## How it's built
+## How the password protection works
 
-- `index.html` is the whole site: one self-contained page, no build step, Google Fonts only.
-- `.github/workflows/pages.yml` publishes `index.html` to GitHub Pages on every push.
-  If the first run fails on the "Configure Pages" step, enable Pages once in
-  **Settings → Pages → Source: GitHub Actions** and re-run the workflow.
+The repo is public, so the page itself is stored encrypted. `index.html` is a small unlock screen
+plus an AES-256-GCM ciphertext of the full itinerary. The key is derived in the browser from the
+team password with PBKDF2-SHA256 (600,000 rounds) using the Web Crypto API; decryption happens
+on the device and nothing readable is stored on GitHub. Ask Richard Letts for the password.
 
-## What is deliberately not on the public page
+## Updating the content
 
-Booking confirmation codes, the Stadium Swim QR entry ticket and the driver's phone number are
-kept off this public copy. The full version is on the private team link that Richard shares.
+The plaintext page is not kept in this repo. To publish a change, edit the plaintext copy, re-encrypt
+it with the same password (Node's built-in `crypto` is enough: PBKDF2-SHA256 -> AES-256-GCM, tag
+appended to the ciphertext), drop the new `{salt, iv, ct}` JSON into the `#payload` script tag in
+`index.html`, and push.
+
+## Deploy
+
+`.github/workflows/pages.yml` publishes `index.html` to GitHub Pages on every push. Pages must be
+enabled once in **Settings -> Pages -> Source: GitHub Actions**; after that every push redeploys.
