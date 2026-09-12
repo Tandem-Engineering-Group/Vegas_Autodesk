@@ -1,0 +1,684 @@
+<title>Vegas AU 2026 Trip</title>
+<meta name="description" content="Team itinerary for Autodesk University 2026 in Las Vegas, Sept 14–16: flights, Fontainebleau hotel, Stadium Swim, AU day at the Venetian, and a pinned map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #F6F5F1;
+    --surface: #FFFFFF;
+    --surface-2: #EEF1F6;
+    --ink: #151C29;
+    --ink-2: #4B5566;
+    --ink-3: #7A8393;
+    --line: #D8DCE3;
+    --line-2: #C2C8D2;
+    --accent: #1C5BB8;        /* Fontainebleau blue */
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E3ECF9;
+    --marquee: #C98A12;       /* downtown neon amber, leisure only */
+    --marquee-soft: #FBF1DC;
+    --go: #2E7D4F;
+    --map-water: #DCE6F2;
+    --map-road: #B9C1CE;
+    --map-strip: #8E99AA;
+    --focus: #1C5BB8;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0F131A;
+      --surface: #171D27;
+      --surface-2: #1F2733;
+      --ink: #EAEDF2;
+      --ink-2: #B4BCC8;
+      --ink-3: #7F8998;
+      --line: #2A3342;
+      --line-2: #3A4454;
+      --accent: #6FA3F0;
+      --accent-ink: #0F131A;
+      --accent-soft: #1B2A42;
+      --marquee: #E8B44A;
+      --marquee-soft: #2E2612;
+      --go: #6CC392;
+      --map-water: #1B2433;
+      --map-road: #3A4454;
+      --map-strip: #6B7788;
+      --focus: #6FA3F0;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0F131A;
+    --surface: #171D27;
+    --surface-2: #1F2733;
+    --ink: #EAEDF2;
+    --ink-2: #B4BCC8;
+    --ink-3: #7F8998;
+    --line: #2A3342;
+    --line-2: #3A4454;
+    --accent: #6FA3F0;
+    --accent-ink: #0F131A;
+    --accent-soft: #1B2A42;
+    --marquee: #E8B44A;
+    --marquee-soft: #2E2612;
+    --go: #6CC392;
+    --map-water: #1B2433;
+    --map-road: #3A4454;
+    --map-strip: #6B7788;
+    --focus: #6FA3F0;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    padding-block: 0 64px;
+    padding-inline: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", Impact, sans-serif; text-wrap: balance; margin: 0; line-height: 1.05; }
+  h1 { font-size: clamp(44px, 7vw, 76px); font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; }
+  h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.01em; }
+  h3 { font-size: 22px; font-weight: 600; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Header */
+  header.top { padding-block: 40px 28px; border-bottom: 2px solid var(--ink); display: grid; gap: 18px; }
+  .kicker { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: baseline; }
+  .kicker .eyebrow { color: var(--accent); }
+  .dates { font-family: "Barlow Condensed", sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-2); text-transform: uppercase; }
+  .party { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 14px; background: var(--surface); }
+  .chip .av { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: var(--ground); font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 12px; display: grid; place-items: center; }
+  .chip small { color: var(--ink-3); }
+  .lede { max-width: 66ch; color: var(--ink-2); margin: 0; }
+  .lede strong { color: var(--ink); }
+
+  /* Need-to-know grid */
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 28px; }
+  .fact { background: var(--surface); border: 1px solid var(--line); padding: 16px 18px 18px; display: grid; gap: 6px; align-content: start; }
+  .fact .eyebrow { display: flex; justify-content: space-between; gap: 8px; }
+  .fact .big { font-family: "Barlow Condensed", sans-serif; font-size: 26px; font-weight: 600; line-height: 1.1; }
+  .fact .sub { color: var(--ink-2); font-size: 14px; }
+  .fact .code { font-size: 14px; color: var(--ink); background: var(--surface-2); padding: 2px 8px; border-radius: 4px; display: inline-block; width: fit-content; }
+  .fact.hotel { border-top: 4px solid var(--accent); }
+  .fact.pool { border-top: 4px solid var(--marquee); }
+  .fact.driver { border-top: 4px solid var(--go); }
+  .contact { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .contact a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 4px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid var(--line-2); color: var(--ink); background: var(--surface); }
+  .contact a.primary { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+  .ticket { display: grid; grid-template-columns: 132px 1fr; gap: 14px; align-items: center; background: #1F2238; color: #F4F5FA; border-radius: 6px; padding: 12px; margin-top: 8px; }
+  .ticket img { width: 132px; height: 132px; display: block; background: #fff; border-radius: 4px; image-rendering: pixelated; }
+  .ticket .tk-title { font-family: "Barlow Condensed", sans-serif; font-size: 20px; font-weight: 600; line-height: 1.1; }
+  .ticket .tk-sub { font-size: 13px; color: #B8BDD1; margin-top: 4px; }
+  .ticket .tk-code { font-size: 15px; color: #FFFFFF; margin-top: 6px; }
+  .ticket.wide { grid-template-columns: 180px 1fr; max-width: 560px; }
+  .ticket.wide img { width: 180px; height: 180px; }
+  @media (max-width: 480px) { .ticket, .ticket.wide { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+  section { margin-top: 56px; }
+  .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; border-bottom: 1px solid var(--line-2); padding-bottom: 10px; margin-bottom: 22px; }
+  .sec-head p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 60ch; }
+
+  /* Days */
+  .day { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-block: 26px; border-bottom: 1px solid var(--line); }
+  .day:last-child { border-bottom: 0; }
+  .day-label { position: sticky; top: 16px; align-self: start; }
+  .day-label .dow { font-family: "Barlow Condensed", sans-serif; font-size: 40px; font-weight: 700; line-height: 1; text-transform: uppercase; }
+  .day-label .dt { color: var(--ink-2); font-size: 15px; margin-top: 4px; }
+  .day-label .theme { margin-top: 12px; display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 8px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); }
+  .day-label .theme.leisure { background: var(--marquee-soft); color: var(--marquee); }
+  .tz { font-size: 12px; color: var(--ink-3); margin-top: 10px; }
+
+  .slots { display: grid; gap: 0; }
+  .slot { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding-block: 12px; border-top: 1px dashed var(--line); }
+  .slot:first-child { border-top: 0; padding-top: 0; }
+  .slot .t { font-size: 14px; color: var(--ink-2); padding-top: 3px; line-height: 1.35; }
+  .slot .t b { color: var(--ink); font-weight: 500; display: block; }
+  .slot .what { display: grid; gap: 4px; }
+  .slot .what .title { font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: baseline; }
+  .slot .what p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 64ch; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; border: 1px solid var(--line-2); color: var(--ink-3); }
+  .tag.booked { border-color: transparent; background: var(--accent-soft); color: var(--accent); }
+  .tag.leisure { border-color: transparent; background: var(--marquee-soft); color: var(--marquee); }
+  .tag.tbd { border-style: dashed; }
+  .pin-ref { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: var(--ground); font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 12px; vertical-align: middle; }
+
+  /* Map */
+  .map-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr); gap: 24px; align-items: start; }
+  .map-frame { background: var(--surface); border: 1px solid var(--line); padding: 12px; }
+  .map-frame svg { display: block; width: 100%; height: auto; max-width: 100%; }
+  .map-note { font-size: 13px; color: var(--ink-3); margin: 10px 4px 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .map-note span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 18px; height: 0; border-top: 3px solid var(--map-strip); display: inline-block; }
+  .swatch.walk { border-top: 3px dotted var(--accent); }
+  .swatch.ride { border-top: 3px dashed var(--marquee); }
+  .places { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .place { display: grid; grid-template-columns: 30px 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; }
+  .place .pin-ref { width: 28px; height: 28px; font-size: 15px; margin-top: 2px; }
+  .place .pin-ref.leisure { background: var(--marquee); color: #1a1408; }
+  .place .pin-ref.hotel { background: var(--accent); color: var(--accent-ink); }
+  .place .name { font-weight: 600; }
+  .place .addr { font-size: 14px; color: var(--ink-2); }
+  .place .links { font-size: 13px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 4px; background: var(--ink); color: var(--ground); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .btn:hover { opacity: .92; }
+
+  /* Confirmations table */
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 620px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; background: var(--surface-2); }
+  tr:last-child td { border-bottom: 0; }
+  td .mono { font-size: 14px; }
+  .muted { color: var(--ink-3); }
+
+  /* Open items */
+  .todo { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .todo li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--line); padding: 12px 14px; }
+  .todo .box { width: 18px; height: 18px; border: 2px solid var(--line-2); border-radius: 3px; margin-top: 3px; }
+  .todo b { display: block; }
+  .todo span { color: var(--ink-2); font-size: 15px; }
+  .owner { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-left: 8px; }
+
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; }
+
+  @media (max-width: 760px) {
+    .day { grid-template-columns: 1fr; gap: 14px; }
+    .day-label { position: static; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+    .day-label .theme { margin-top: 0; }
+    .tz { width: 100%; margin-top: 0; }
+    .map-grid { grid-template-columns: 1fr; }
+    .slot { grid-template-columns: 82px 1fr; gap: 12px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pulse { animation: pulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes pulse { 0%,100% { opacity: .35; transform: scale(1); } 50% { opacity: 0; transform: scale(1.9); } }
+  }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">
+      <span class="eyebrow">Autodesk University 2026 · Las Vegas</span>
+      <span class="dates">Mon Sep 14 – Wed Sep 16, 2026</span>
+    </div>
+    <h1>Vegas AU 2026 Trip</h1>
+    <p class="lede" style="font-size:14px;color:var(--ink-3);max-width:70ch">Public copy. Booking confirmation codes, the Stadium Swim QR ticket and Marin's phone number are kept off this page; Richard has them on the private team link.</p>
+    <p class="lede">Two nights at the <strong>Fontainebleau</strong>, one full conference day at the Venetian, and a pool box at Circa the night we land. Four of us are going. Everything below is pulled from the booking emails and the "Vegas AU Conference Sept 14-16" group chat. Times are <strong>Las Vegas local (PDT)</strong> unless marked ET. Vegas is 3 hours behind Detroit/Windsor.</p>
+    <div class="party" aria-label="Travel party">
+      <span class="chip"><span class="av">MB</span>Matt Baird <small>Baird AE · booked flights &amp; hotel</small></span>
+      <span class="chip"><span class="av">RL</span>Richard Letts <small>Tandem</small></span>
+      <span class="chip"><span class="av">AM</span>Alea McLellan <small>Tandem</small></span>
+      <span class="chip"><span class="av">BM</span>Brandon Munro <small>Baird AE</small></span>
+    </div>
+  </header>
+
+  <div class="facts">
+    <div class="fact hotel">
+      <div class="eyebrow"><span>Hotel</span><span>2 nights</span></div>
+      <div class="big">Fontainebleau Las Vegas</div>
+      <div class="sub">2777 S Las Vegas Blvd, Las Vegas, NV 89109. Check-in Mon Sep 14, check-out Wed Sep 16. North end of the Strip, just north of the Wynn and a short walk to the Venetian.</div>
+      <div class="sub">Booked by Matt Baird. Confirmation numbers are with Matt (not in your inbox).</div>
+    </div>
+    <div class="fact">
+      <div class="eyebrow"><span>Flights</span><span>Delta</span></div>
+      <div class="big">DTW ⇄ LAS</div>
+      <div class="sub"><span class="mono">DL 421</span> Mon Sep 14 · 12:25 PM ET → 1:38 PM PT</div>
+      <div class="sub"><span class="mono">DL 334</span> Wed Sep 16 · 11:25 AM PT → 6:27 PM ET</div>
+      <div class="sub">Delta First on both legs. Each traveler has their own confirmation from Matt.</div>
+    </div>
+    <div class="fact">
+      <div class="eyebrow"><span>Conference</span><span>Tue Sep 15</span></div>
+      <div class="big">AU 2026 · Tuesday Pass</div>
+      <div class="sub">Venetian Convention &amp; Expo Center, 201 Sands Ave. Doors 8:00 AM.</div>
+      <div class="sub">Richard <span class="code mono">6955</span> · Alea <span class="code mono">6954</span> · Matt and Brandon booked their own. USD $850 each, expense it.</div>
+    </div>
+    <div class="fact driver">
+      <div class="eyebrow"><span>Getting around</span><span>Richard's driver</span></div>
+      <div class="big">Marin, Las Vegas</div>
+      <div class="sub">Richard's regular Vegas driver. Richard texts him ahead with the flight number, landing time and headcount (4 + bags) for the LAS pickup Mon 1:38 PM, the Circa run Mon 4:30 PM, and the LAS drop Wed 9:00 AM.</div>
+      <div class="sub">Need to reach him on the day? Ask Richard for the number.</div>
+    </div>
+    <div class="fact pool">
+      <div class="eyebrow"><span>Landing night</span><span>Mon 5–11 PM</span></div>
+      <div class="big">Stadium Swim at Circa</div>
+      <div class="sub">4 × Pool Side Boxes (one each), Afternoon session. 8 Fremont St, downtown. Under Richard Letts.</div>
+      <div class="sub">$667.88 paid in full. Richard has the QR entry ticket; one scan covers all four boxes.</div>
+    </div>
+  </div>
+
+  <section id="plan">
+    <div class="sec-head">
+      <h2>Day by day</h2>
+      <p>Booked items are marked. Everything else is the suggested flow so the four of us are in the same place at the same time.</p>
+    </div>
+
+    <article class="day">
+      <div class="day-label">
+        <div class="dow">Mon 14</div>
+        <div class="dt">September 14 · Travel day</div>
+        <span class="theme leisure">Fly in · Pool</span>
+        <div class="tz">Morning times in ET, afternoon in PT</div>
+      </div>
+      <div class="slots">
+        <div class="slot">
+          <div class="t"><b>10:30 AM</b>ET</div>
+          <div class="what">
+            <div class="title">Arrive DTW, McNamara Terminal (Delta)</div>
+            <p>Bags check free in First (2 × 70 lb). Sky Club is an option before boarding.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>12:25 PM</b>ET</div>
+          <div class="what">
+            <div class="title">Delta 421 departs DTW <span class="tag booked">Booked</span></div>
+            <p>Richard in 1A, First Classic. Matt sent each traveler their own confirmation; the group is on the same flight.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>1:38 PM</b>PT</div>
+          <div class="what">
+            <div class="title">Land LAS, Harry Reid International <span class="pin-ref">1</span></div>
+            <p>Delta arrives Terminal 1. Marin, Richard's driver, picks us up once Richard confirms by text. Backup is rideshare from Level 2 of the Terminal 1 garage. About 15–20 minutes to the hotel.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>2:30 PM</b></div>
+          <div class="what">
+            <div class="title">Check in, Fontainebleau Las Vegas <span class="pin-ref">2</span> <span class="tag booked">Booked</span></div>
+            <p>Official check-in is 3:00 PM. If rooms are not ready, drop bags with the bell desk. Ask Matt for the confirmation under his name if the desk needs it.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>4:30 PM</b></div>
+          <div class="what">
+            <div class="title">Ride downtown to Circa</div>
+            <p>About 12–15 minutes up Las Vegas Blvd, with Marin if he is available, otherwise rideshare. Bring swim gear and ID. Box is under Richard's name.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>5:00 PM</b><span>to 11:00 PM</span></div>
+          <div class="what">
+            <div class="title">Stadium Swim, Circa Resort &amp; Casino <span class="pin-ref">3</span> <span class="tag booked">Booked</span> <span class="tag leisure">Leisure</span></div>
+            <p>4 Pool Side Boxes, one per person, Afternoon session. Subtotal $500 + $100 gratuity already paid, so drinks and food go on a fresh tab. Fremont Street Experience is right outside for dinner options afterward.</p>
+            <p>Entry is the QR ticket under Richard's name, on his phone. One scan covers all four boxes, so arrive together.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-label">
+        <div class="dow">Tue 15</div>
+        <div class="dt">September 15 · Conference day</div>
+        <span class="theme">AU 2026</span>
+        <div class="tz">All times PT</div>
+      </div>
+      <div class="slots">
+        <div class="slot">
+          <div class="t"><b>7:15 AM</b></div>
+          <div class="what">
+            <div class="title">Breakfast at the hotel, then head to the Venetian</div>
+            <p>About a mile south along the Strip, 20 minutes on foot, or a 5-minute ride. Meet in the Fontainebleau lobby.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>8:00 AM</b></div>
+          <div class="what">
+            <div class="title">Badge pickup, Venetian Convention &amp; Expo Center <span class="pin-ref">4</span> <span class="tag booked">Passes booked</span></div>
+            <p>Registration opens at 8:00. Have your AU confirmation and photo ID ready (Richard 6955, Alea 6954). Build your session list in the AU app before you arrive; most sessions are first come, first served.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>Morning</b></div>
+          <div class="what">
+            <div class="title">Opening keynote and first sessions</div>
+            <p>Keynote time is set in the AU app. Split up for sessions and regroup at the Expo.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>Midday</b></div>
+          <div class="what">
+            <div class="title">AU Expo floor</div>
+            <p>Worth a stop for us: the Autodesk Operations experience (Autodesk has been emailing about it all month), Forma and the AEC zone, and the Fusion / manufacturing area. Lunch is on the show floor.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>~5:00 PM</b></div>
+          <div class="what">
+            <div class="title">Wynn Las Vegas after the Expo <span class="pin-ref">5</span> <span class="tag tbd">No reservation yet</span></div>
+            <p>Matt's plan: walk across Sands Ave to the Wynn for dinner and a drink. It is on the way back to the hotel. Book a table once we know the headcount.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>Evening</b></div>
+          <div class="what">
+            <div class="title">Optional: Bellagio fountains <span class="pin-ref">6</span> <span class="tag leisure">Leisure</span></div>
+            <p>Shows every 15 minutes from 8 PM. About a 10-minute ride south from the Wynn.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="day">
+      <div class="day-label">
+        <div class="dow">Wed 16</div>
+        <div class="dt">September 16 · Fly home</div>
+        <span class="theme">Travel</span>
+        <div class="tz">Morning in PT, arrival in ET</div>
+      </div>
+      <div class="slots">
+        <div class="slot">
+          <div class="t"><b>8:30 AM</b></div>
+          <div class="what">
+            <div class="title">Check out of the Fontainebleau</div>
+            <p>Hotel checkout deadline is 11 AM, but we need to be at the airport well before that.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>9:00 AM</b></div>
+          <div class="what">
+            <div class="title">Marin drives us to LAS, Terminal 1</div>
+            <p>Confirm the 9:00 AM pickup with Marin the night before. Delta departs from Terminal 1. Aim to be through security by 10:30.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>11:25 AM</b>PT</div>
+          <div class="what">
+            <div class="title">Delta 334 departs LAS <span class="tag booked">Booked</span></div>
+            <p>Richard in 4A, First Classic.</p>
+          </div>
+        </div>
+        <div class="slot">
+          <div class="t"><b>6:27 PM</b>ET</div>
+          <div class="what">
+            <div class="title">Land DTW</div>
+            <p>Conference continues through Thursday the 17th without us; Matt and Richard have a conflict that day.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="map">
+    <div class="sec-head">
+      <h2>Where everything is</h2>
+      <p>Schematic of the Strip and downtown, north at the top. Numbers match the day-by-day plan. Tap any place for Google Maps.</p>
+    </div>
+    <div class="map-grid">
+      <div class="map-frame">
+        <svg viewBox="0 0 600 760" role="img" aria-labelledby="mapTitle mapDesc" xmlns="http://www.w3.org/2000/svg">
+          <title id="mapTitle">Schematic map of Las Vegas trip locations</title>
+          <desc id="mapDesc">Las Vegas Boulevard runs from the airport in the south to Fremont Street downtown in the north. Pins mark the airport, Fontainebleau, Circa, Venetian Expo, Wynn and Bellagio.</desc>
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M40 0H0V40" fill="none" stroke="var(--line)" stroke-width="0.6"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="600" height="760" fill="var(--surface)"/>
+          <rect x="0" y="0" width="600" height="760" fill="url(#grid)"/>
+
+          <!-- Downtown block and Fremont St -->
+          <rect x="400" y="40" width="190" height="120" rx="4" fill="var(--surface-2)" stroke="none"/>
+          <text x="410" y="60" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1.5" fill="var(--ink-3)">DOWNTOWN</text>
+          <line x1="420" y1="104" x2="585" y2="104" stroke="var(--map-road)" stroke-width="6" stroke-linecap="round"/>
+          <text x="500" y="126" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink-3)" text-anchor="middle">Fremont St</text>
+
+          <!-- Airport block -->
+          <rect x="300" y="620" width="240" height="110" rx="4" fill="var(--map-water)" stroke="none"/>
+          <text x="312" y="641" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1.5" fill="var(--ink-3)">HARRY REID INTL (LAS)</text>
+          <line x1="330" y1="690" x2="520" y2="690" stroke="var(--map-road)" stroke-width="5" stroke-dasharray="14 8"/>
+
+          <!-- Las Vegas Blvd (the Strip) -->
+          <polyline points="130,700 138,656 128,560 114,497 150,470 180,442 228,401 300,345 348,297 384,242 440,168 480,138 504,90" fill="none" stroke="var(--map-strip)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <text transform="translate(96 600) rotate(-83)" font-family="IBM Plex Sans, sans-serif" font-size="12" letter-spacing="1.5" fill="var(--ink-3)">LAS VEGAS BLVD · THE STRIP</text>
+
+          <!-- Sands Ave / Spring Mountain -->
+          <line x1="150" y1="432" x2="300" y2="432" stroke="var(--map-road)" stroke-width="5" stroke-linecap="round"/>
+          <text x="262" y="452" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink-3)">Sands Ave</text>
+          <!-- Sahara Ave -->
+          <line x1="230" y1="297" x2="560" y2="297" stroke="var(--map-road)" stroke-width="5" stroke-linecap="round"/>
+          <text x="470" y="290" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink-3)">Sahara Ave</text>
+          <!-- Paradise Rd from airport up to Sands -->
+          <polyline points="380,640 372,560 350,480 300,432" fill="none" stroke="var(--map-road)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text transform="translate(392 590) rotate(-80)" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--ink-3)">Paradise Rd</text>
+
+          <!-- Rideshare routes -->
+          <path d="M375 698 C 390 560, 360 420, 306 345" fill="none" stroke="var(--marquee)" stroke-width="2.5" stroke-dasharray="7 6"/>
+          <path d="M306 345 C 340 260, 420 160, 466 92" fill="none" stroke="var(--marquee)" stroke-width="2.5" stroke-dasharray="7 6"/>
+          <!-- Walking route hotel -> expo -> wynn -->
+          <path d="M306 345 C 280 370, 250 400, 222 432" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+          <path d="M222 432 L 234 404" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+          <!-- Route labels -->
+          <text x="406" y="500" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--marquee)">~15 min ride</text>
+          <text x="404" y="222" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--marquee)">~15 min ride</text>
+          <text x="196" y="392" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="var(--accent)" text-anchor="end">~20 min walk</text>
+
+          <!-- Pins -->
+          <g font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="15" text-anchor="middle">
+            <!-- 1 Airport -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Harry+Reid+International+Airport+Terminal+1" target="_blank" rel="noopener">
+              <circle cx="375" cy="698" r="15" fill="var(--ink)"/><text x="375" y="703" fill="var(--ground)">1</text>
+            </a>
+            <text x="398" y="703" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="start" fill="var(--ink)">LAS Terminal 1</text>
+
+            <!-- 2 Fontainebleau -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Fontainebleau+Las+Vegas" target="_blank" rel="noopener">
+              <circle class="pulse" cx="306" cy="345" r="15" fill="var(--accent)"/>
+              <circle cx="306" cy="345" r="17" fill="var(--accent)"/><text x="306" y="351" font-size="17" fill="var(--accent-ink)">2</text>
+            </a>
+            <text x="330" y="341" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="start" fill="var(--ink)">Fontainebleau</text>
+            <text x="330" y="356" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="start" fill="var(--ink-3)">Hotel · Sep 14–16</text>
+
+            <!-- 3 Circa -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Circa+Resort+%26+Casino+8+Fremont+St+Las+Vegas" target="_blank" rel="noopener">
+              <circle cx="466" cy="92" r="15" fill="var(--marquee)"/><text x="466" y="97" fill="#1a1408">3</text>
+            </a>
+            <text x="446" y="88" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="end" fill="var(--ink)">Circa · Stadium Swim</text>
+            <text x="446" y="102" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="end" fill="var(--ink-3)">Mon 5–11 PM</text>
+
+            <!-- 4 Venetian Expo -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Venetian+Convention+and+Expo+Center+201+Sands+Ave" target="_blank" rel="noopener">
+              <circle cx="222" cy="432" r="15" fill="var(--ink)"/><text x="222" y="437" fill="var(--ground)">4</text>
+            </a>
+            <text x="200" y="428" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="end" fill="var(--ink)">Venetian Expo</text>
+            <text x="200" y="443" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="end" fill="var(--ink-3)">AU 2026 · Tue</text>
+
+            <!-- 5 Wynn -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Wynn+Las+Vegas" target="_blank" rel="noopener">
+              <circle cx="234" cy="404" r="15" fill="var(--ink)"/><text x="234" y="409" fill="var(--ground)">5</text>
+            </a>
+            <text x="256" y="400" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="start" fill="var(--ink)">Wynn</text>
+            <text x="256" y="414" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="start" fill="var(--ink-3)">Dinner after Expo</text>
+
+            <!-- 6 Bellagio -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Fountains+of+Bellagio" target="_blank" rel="noopener">
+              <circle cx="102" cy="499" r="15" fill="var(--ink)"/><text x="102" y="504" fill="var(--ground)">6</text>
+            </a>
+            <text x="124" y="495" font-family="IBM Plex Sans, sans-serif" font-weight="600" font-size="13" text-anchor="start" fill="var(--ink)">Bellagio fountains</text>
+            <text x="124" y="510" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="start" fill="var(--ink-3)">Optional, Tue night</text>
+          </g>
+
+          <!-- North arrow + scale -->
+          <g transform="translate(40 40)">
+            <polygon points="0,-18 6,6 0,2 -6,6" fill="var(--ink)"/>
+            <text x="0" y="22" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="middle" fill="var(--ink-3)">N</text>
+          </g>
+          <g transform="translate(24 730)">
+            <line x1="0" y1="0" x2="86" y2="0" stroke="var(--ink)" stroke-width="2"/>
+            <line x1="0" y1="-5" x2="0" y2="5" stroke="var(--ink)" stroke-width="2"/>
+            <line x1="86" y1="-5" x2="86" y2="5" stroke="var(--ink)" stroke-width="2"/>
+            <text x="43" y="-8" font-family="IBM Plex Sans, sans-serif" font-size="11" text-anchor="middle" fill="var(--ink-3)">approx. 1 mile</text>
+          </g>
+        </svg>
+        <div class="map-note">
+          <span><i class="swatch"></i>Las Vegas Blvd</span>
+          <span><i class="swatch walk"></i>Walk</span>
+          <span><i class="swatch ride"></i>Car (Marin or rideshare)</span>
+          <span>Not to exact scale</span>
+        </div>
+      </div>
+
+      <div>
+        <ul class="places">
+          <li class="place">
+            <span class="pin-ref">1</span>
+            <div>
+              <div class="name">Harry Reid International Airport (LAS), Terminal 1</div>
+              <div class="addr">5757 Wayne Newton Blvd, Las Vegas, NV 89119</div>
+              <div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Harry+Reid+International+Airport+Terminal+1" target="_blank" rel="noopener">Open in Maps</a></div>
+            </div>
+          </li>
+          <li class="place">
+            <span class="pin-ref hotel">2</span>
+            <div>
+              <div class="name">Fontainebleau Las Vegas</div>
+              <div class="addr">2777 S Las Vegas Blvd, Las Vegas, NV 89109</div>
+              <div class="links">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Fontainebleau+Las+Vegas" target="_blank" rel="noopener">Open in Maps</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Harry+Reid+International+Airport+Terminal+1&amp;destination=Fontainebleau+Las+Vegas&amp;travelmode=driving" target="_blank" rel="noopener">Directions from LAS</a>
+              </div>
+            </div>
+          </li>
+          <li class="place">
+            <span class="pin-ref leisure">3</span>
+            <div>
+              <div class="name">Stadium Swim at Circa Resort &amp; Casino</div>
+              <div class="addr">8 Fremont St, Las Vegas, NV 89101 · Mon Sep 14, 5–11 PM</div>
+              <div class="links">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Circa+Resort+%26+Casino+8+Fremont+St+Las+Vegas" target="_blank" rel="noopener">Open in Maps</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Fontainebleau+Las+Vegas&amp;destination=Circa+Resort+%26+Casino+Las+Vegas&amp;travelmode=driving" target="_blank" rel="noopener">Directions from hotel</a>
+              </div>
+            </div>
+          </li>
+          <li class="place">
+            <span class="pin-ref">4</span>
+            <div>
+              <div class="name">Venetian Convention &amp; Expo Center (AU 2026)</div>
+              <div class="addr">201 Sands Ave, Las Vegas, NV 89169 · Tue Sep 15 from 8 AM</div>
+              <div class="links">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Venetian+Convention+and+Expo+Center+201+Sands+Ave" target="_blank" rel="noopener">Open in Maps</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Fontainebleau+Las+Vegas&amp;destination=Venetian+Expo+201+Sands+Ave+Las+Vegas&amp;travelmode=walking" target="_blank" rel="noopener">Walk from hotel</a>
+              </div>
+            </div>
+          </li>
+          <li class="place">
+            <span class="pin-ref">5</span>
+            <div>
+              <div class="name">Wynn Las Vegas</div>
+              <div class="addr">3131 S Las Vegas Blvd, Las Vegas, NV 89109 · Tue after the Expo</div>
+              <div class="links">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Wynn+Las+Vegas" target="_blank" rel="noopener">Open in Maps</a>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Venetian+Expo+201+Sands+Ave+Las+Vegas&amp;destination=Wynn+Las+Vegas&amp;travelmode=walking" target="_blank" rel="noopener">Walk from Expo</a>
+              </div>
+            </div>
+          </li>
+          <li class="place">
+            <span class="pin-ref">6</span>
+            <div>
+              <div class="name">Fountains of Bellagio</div>
+              <div class="addr">3600 S Las Vegas Blvd, Las Vegas, NV 89109 · optional</div>
+              <div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=Fountains+of+Bellagio" target="_blank" rel="noopener">Open in Maps</a></div>
+            </div>
+          </li>
+        </ul>
+        <p style="margin:14px 0 0">
+          <a class="btn" href="https://www.google.com/maps/dir/Harry+Reid+International+Airport+Terminal+1/Fontainebleau+Las+Vegas/Circa+Resort+%26+Casino+Las+Vegas/Venetian+Expo+201+Sands+Ave+Las+Vegas/Wynn+Las+Vegas/Fountains+of+Bellagio" target="_blank" rel="noopener">Open all six stops in Google Maps →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="confirmations">
+    <div class="sec-head">
+      <h2>Confirmations</h2>
+      <p>Keep this handy at the desk, the gate and the pool. Codes come straight from the booking emails.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Details</th><th>Code</th><th>Booked by</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Delta 421</b> DTW → LAS</td>
+            <td>Mon Sep 14 · 12:25 PM ET → 1:38 PM PT · First Classic · Richard seat 1A</td>
+            <td><span class="muted">Private, ask Richard</span></td>
+            <td>Matt Baird, Sep 2</td>
+          </tr>
+          <tr>
+            <td><b>Delta 334</b> LAS → DTW</td>
+            <td>Wed Sep 16 · 11:25 AM PT → 6:27 PM ET · First Classic · Richard seat 4A</td>
+            <td><span class="muted">Private, ask Richard</span></td>
+            <td>Matt Baird, Sep 2</td>
+          </tr>
+          <tr>
+            <td><b>Fontainebleau Las Vegas</b></td>
+            <td>Sep 14–16, 2 nights. Wynn was ~$2k/night and the Venetian was sold out, hence Fontainebleau.</td>
+            <td><span class="muted">Ask Matt</span></td>
+            <td>Matt Baird</td>
+          </tr>
+          <tr>
+            <td><b>AU 2026 Tuesday Conference Pass</b> · Richard</td>
+            <td>Tue Sep 15 · Venetian Convention &amp; Expo Center · invoice sent to Accounting</td>
+            <td><span class="mono">6955</span></td>
+            <td>Alea McLellan, Sep 8</td>
+          </tr>
+          <tr>
+            <td><b>AU 2026 Tuesday Conference Pass</b> · Alea</td>
+            <td>Tue Sep 15 · Venetian Convention &amp; Expo Center</td>
+            <td><span class="mono">6954</span></td>
+            <td>Alea McLellan, Sep 8</td>
+          </tr>
+          <tr>
+            <td><b>AU 2026 Tuesday Conference Pass</b> · Matt</td>
+            <td>Tue Sep 15 · booked on his own account</td>
+            <td><span class="muted">With Matt</span></td>
+            <td>Matt Baird, Sep 3</td>
+          </tr>
+          <tr>
+            <td><b>AU 2026 Tuesday Conference Pass</b> · Brandon</td>
+            <td>Tue Sep 15 · confirmed in the group chat Sep 3</td>
+            <td><span class="muted">With Brandon</span></td>
+            <td>Brandon Munro, Sep 3</td>
+          </tr>
+          <tr>
+            <td><b>Stadium Swim</b> · Circa</td>
+            <td>Mon Sep 14 · 5:00–11:00 PM · 4 × Pool Side Boxes (Afternoon) · $500 + $100 gratuity + $41.88 tax + $26 fee = <b>$667.88 paid</b> · non-refundable inside 72 h</td>
+            <td><span class="muted">Private, ask Richard</span></td>
+            <td>Richard Letts, Sep 12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="open">
+    <div class="sec-head">
+      <h2>Still to sort</h2>
+      <p>Small things that are not booked or not in writing yet.</p>
+    </div>
+    <ul class="todo">
+      <li><span class="box"></span><div><b>Text Marin to book the pickups <span class="owner">Richard</span></b><span>Send Marin the plan: Delta 421 landing LAS Terminal 1 at 1:38 PM Mon Sep 14, four people with bags to the Fontainebleau; optional Circa run at 4:30 PM; and a 9:00 AM Fontainebleau to LAS pickup on Wed Sep 16.</span></div></li>
+      <li><span class="box"></span><div><b>Hotel confirmation numbers <span class="owner">Matt</span></b><span>Matt booked the Fontainebleau rooms; the confirmations never landed in Richard's inbox. Post them in the Teams group chat so everyone has them at check-in. (The code in Richard's screenshot is the Stadium Swim booking, not the hotel.)</span></div></li>
+      <li><span class="box"></span><div><b>Wynn table for Tuesday night <span class="owner">Anyone</span></b><span>Matt suggested the Wynn after the Expo. Nothing is reserved. Pick a restaurant and book a table for four.</span></div></li>
+      <li><span class="box"></span><div><b>Stadium Swim headcount <span class="owner">Richard</span></b><span>Four Pool Side Boxes are booked under Richard for Monday 5–11 PM, one per person. Make sure everyone is in the Fontainebleau lobby by 4:30 PM to ride down together.</span></div></li>
+      <li><span class="box"></span><div><b>Build AU agendas <span class="owner">Everyone</span></b><span>Log in to My AU Portal, favorite sessions for Tuesday, and enroll in anything that needs enrollment. Download the AU app for the keynote time and Expo map.</span></div></li>
+      <li><span class="box"></span><div><b>Check in for Delta 421 <span class="owner">Everyone</span></b><span>Check-in opens 24 hours before departure, Sunday Sep 13 at 12:25 PM ET. REAL ID or passport required.</span></div></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>Compiled Sep 12, 2026 from Delta, Autodesk, Circa and Teams messages. Verify times in the Fly Delta and AU apps before you go.</span>
+    <span>Tandem · Baird AE</span>
+  </footer>
+</div>
