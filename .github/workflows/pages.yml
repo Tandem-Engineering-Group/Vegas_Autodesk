@@ -30,6 +30,9 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
+          cp -r au2026 _site/au2026
+          cp -r itinerary _site/itinerary
+          rm -rf _site/au2026/harvest/tests/__pycache__
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
