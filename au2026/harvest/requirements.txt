@@ -1,0 +1,3 @@
+# AU 2026 harvester — runs on the operator's PC (see README.md).
+playwright>=1.47
+yt-dlp>=2025.1.1   # optional: only used with --ytdlp for streaming recordings

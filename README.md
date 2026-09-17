@@ -7,6 +7,12 @@ driver contact and open items.
 
 Live site: https://tandem-engineering-group.github.io/Vegas_Autodesk/
 
+## AU 2026 sessions (public, no password)
+
+The full AU 2026 session catalog, a searchable page, a shortlist by theme, and a downloader for
+handouts and recordings live in [`au2026/`](au2026/README.md). Live page:
+https://tandem-engineering-group.github.io/Vegas_Autodesk/au2026/
+
 ## How the password protection works
 
 The repo is public, so the page itself is stored encrypted. `index.html` is a small unlock screen
