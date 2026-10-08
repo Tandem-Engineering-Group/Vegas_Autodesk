@@ -5,6 +5,7 @@ Landing portal for Autodesk University 2026: https://tandem-engineering-group.gi
 - `index.html` — the portal: sessions by theme, keynotes, announcement coverage, Autodesk's class code, downloads, trip.
 - `au2026/` — searchable catalog page, data (CSV/JSON), shortlist, material harvester. See [`au2026/README.md`](au2026/README.md).
 - `itinerary/` — the password-protected team itinerary (below).
+- `turks/` — Richard's password-protected Turks and Caicos itinerary, Oct 9-16, 2026 (same unlock screen and password).
 
 ## Team itinerary (`itinerary/`)
 
@@ -15,9 +16,14 @@ driver contact and open items.
 
 Live site: https://tandem-engineering-group.github.io/Vegas_Autodesk/
 
+## Turks trip (`turks/`)
+
+Ocean Club West on Grace Bay, a day-by-day plan, a pinned schematic map of Providenciales with
+Google Maps links, confirmations and open items. Live: https://tandem-engineering-group.github.io/Vegas_Autodesk/turks/
+
 ## How the password protection works
 
-The repo is public, so the page itself is stored encrypted. `itinerary/index.html` is a small unlock screen
+The repo is public, so the page itself is stored encrypted. `itinerary/index.html` (and `turks/index.html`) is a small unlock screen
 plus an AES-256-GCM ciphertext of the full itinerary. The key is derived in the browser from the
 team password with PBKDF2-SHA256 (600,000 rounds) using the Web Crypto API; decryption happens
 on the device and nothing readable is stored on GitHub. Ask Richard Letts for the password.
@@ -31,5 +37,5 @@ appended to the ciphertext), drop the new `{salt, iv, ct}` JSON into the `#paylo
 
 ## Deploy
 
-`.github/workflows/pages.yml` publishes `index.html`, `au2026/` and `itinerary/` to GitHub Pages on every push to the default branch. Pages must be
+`.github/workflows/pages.yml` publishes `index.html`, `au2026/`, `itinerary/` and `turks/` to GitHub Pages on every push to the default branch. Pages must be
 enabled once in **Settings -> Pages -> Source: GitHub Actions**; after that every push redeploys.
